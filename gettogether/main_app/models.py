@@ -25,5 +25,5 @@ class Event(models.Model):
   def __str__(self):
     return f'{self.title} ({self.id})'
 
-  def get_absolulte_url(self):
+  def get_absolute_url(self):
     return reverse('detail', kwargs={'event_id': self.id})
