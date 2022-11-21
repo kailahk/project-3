@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from datetime import date
+from django.contrib.auth.models import User
 
 # class Comment(models.Model):
 #   content = models.CharField(max_length=150)
@@ -21,6 +22,7 @@ class Event(models.Model):
   # comments = models.ManyToManyField(Comment)
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now=True)
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):
     return f'{self.title} ({self.id})'
