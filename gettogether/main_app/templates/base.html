@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
+
 <body>
     <header class="navbar-fixed">
         <nav>
@@ -19,9 +21,15 @@
                     <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;GetTogether</a></li>
                 </ul>
                 <ul class="right">
-                  <li><a href="{% url 'about' %}">About</a></li>
-                  <li><a href="{% url 'events_create' %}">Add Event</a></li>
-                  <li><a href="{% url 'index' %}">All Events</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'index' %}">All Events</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'events_create' %}">Add Event</a></li>
+                    <li><a href="{% url 'logout' %}">Log Out  <span style="color:teal; text-decoration:underline">{{ user.username }}</span></a></li>
+                    {% else %}
+                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -30,8 +38,9 @@
         {% block content %}
         {% endblock %}
     </main>
-  	<footer class="page-footer">
-       <div class="right">All Rights Reserved, &copy; 2022 GetTogether &nbsp;</div>
+    <footer class="page-footer">
+        <div class="right">All Rights Reserved, &copy; 2022 GetTogether &nbsp;</div>
     </footer>
 </body>
+
 </html>
