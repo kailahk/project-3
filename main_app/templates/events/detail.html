@@ -19,6 +19,40 @@
           </div>
         </div>
     </div>
+    <div class="col s6">
+      <form action="{% url 'add_comment' event.id %}" method="POST">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <input type="submit" class="btn" value="Add Comment">
+      </form>
+      <table class="striped">
+        <thead>
+          <tr><th>User</th><th>Content</th><th>Date</th><th></th></tr>
+        </thead>
+        <tbody>
+          {% for comment in event.comment_set.all %}
+            <tr>
+              <td>{{ comment.user.username }}</td>
+              <td>{{ comment.content }}</td>
+              {% if comment.updated_at %}
+              <td>{{ comment.updated_at }}</td>
+              {% else %}
+              <td>{{ comment.created_at }}</td>
+              <td>
+                
+              </td>
+              {% endif %}              
+            </tr>
+            {% if comment.user == request.user %}
+            <div class="card-action">
+              <a href="{% url 'comment_update' comment.id %}">Edit</a>
+              <a href="{% url 'comment_delete' comment.id %}">Delete</a>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 {% endblock %}

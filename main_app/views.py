@@ -7,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Event
+from .forms import CommentForm
 
 # Define the home view
 def home(request):
@@ -24,13 +25,35 @@ def events_index(request):
 
 def events_detail(request, event_id):
   event = Event.objects.get(id=event_id)
+  comment_form = CommentForm()
   return render(request, 'events/detail.html', {
-    'event': event
+    'event': event,
+    'comment_form': comment_form,
   })
 
 # class EventDetail(DetailView):
 #   model = Event
 
+def add_comment(request, event_id):
+  # create a ModelForm instance using the data in request.POST
+  form = CommentForm(request.POST)
+  # validate the form
+  if form.is_valid():
+    # don't save the form to the db until it
+    # has the cat_id assigned
+    new_comment = form.save(commit=False)
+    new_comment.event_id = event_id
+    new_comment.user = request.user
+    new_comment.save()
+  return redirect('detail', event_id=event_id)
+
+class CommentUpdate(LoginRequiredMixin, UpdateView):
+    model = Event
+    fields = ['content']
+
+class CommentDelete(LoginRequiredMixin, DeleteView):
+    model = Event
+    success_url = '' #maybe add /events back
 
 class EventCreate(LoginRequiredMixin, CreateView):
   model = Event
