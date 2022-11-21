@@ -42,7 +42,7 @@ class EventCreate(LoginRequiredMixin, CreateView):
 
 class EventUpdate(LoginRequiredMixin, UpdateView):
   model = Event
-  fields = '__all__'
+  fields = ['title', 'datetime', 'description', 'address', 'neighborhood', 'city']
 
 class EventDelete(LoginRequiredMixin, DeleteView):
   model = Event
