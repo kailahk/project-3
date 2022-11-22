@@ -13,10 +13,12 @@
           <p>Address: {{ event.address }}</p>
           <p>Neighborhood: {{ event.neighborhood }}</p>
           <p>City: {{ event.city }}</p>
+          {% if event.user == request.user %}
           <div class="card-action">
             <a href="{% url 'events_update' event.id %}">Edit</a>
             <a href="{% url 'events_delete' event.id %}">Delete</a>
           </div>
+          {% endif %}
         </div>
     </div>
     <div class="col s6">

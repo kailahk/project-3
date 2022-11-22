@@ -24,8 +24,12 @@
                     <li><a href="{% url 'about' %}">About</a></li>
                     <li><a href="{% url 'index' %}">All Events</a></li>
                     {% if user.is_authenticated %}
+                    <li><a href="{% url 'my_index' %}">My Events</a></li>
                     <li><a href="{% url 'events_create' %}">Add Event</a></li>
-                    <li><a href="{% url 'logout' %}">Log Out  <span style="color:teal; text-decoration:underline">{{ user.username }}</span></a></li>
+                    <li><a href="{% url 'events_seattle' %}">Seattle</a></li>
+                    <li><a href="{% url 'events_losangeles' %}">Los Angeles</a></li>
+                    <li><a href="{% url 'events_sanfrancisco' %}">San Francisco</a></li>
+                    <li><a href="{% url 'logout' %}">Log Out <span style="color:teal; text-decoration:underline">{{ user.username }}</span></a></li>
                     {% else %}
                     <li><a href="{% url 'signup' %}">Sign Up</a></li>
                     <li><a href="{% url 'login' %}">Log In</a></li>
