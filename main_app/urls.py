@@ -13,4 +13,8 @@ urlpatterns = [
   path('events/<int:event_id>/add_comment/', views.add_comment, name='add_comment'),
   path('comments/<int:pk>/update/', views.CommentUpdate.as_view(), name='comment_update'),
   path('comments/<int:pk>/delete/', views.CommentDelete.as_view(), name='comment_delete'),
+  path('events/my_index/', views.events_my_index, name='my_index'),
+  path('events/events_seattle/', views.events_seattle, name='events_seattle'),
+  path('events/events_losangeles/', views.events_losangeles, name='events_losangeles'),
+  path('events/events_sanfrancisco/', views.events_sanfrancisco, name='events_sanfrancisco'),
 ]

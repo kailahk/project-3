@@ -34,6 +34,7 @@ def events_detail(request, event_id):
 # class EventDetail(DetailView):
 #   model = Event
 
+@login_required
 def add_comment(request, event_id):
   # create a ModelForm instance using the data in request.POST
   form = CommentForm(request.POST)
@@ -85,3 +86,28 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
+@login_required
+def events_my_index(request):
+  events = Event.objects.filter(user=request.user)
+  return render(request, 'events/my_index.html', {
+    'events': events
+  })
+
+def events_seattle(request):
+  events = Event.objects.filter(city='Seattle')
+  return render(request, 'events/events_seattle.html', {
+    'events': events
+  })
+
+def events_losangeles(request):
+  events = Event.objects.filter(city='Los Angeles')
+  return render(request, 'events/events_losangeles.html', {
+    'events': events
+  })
+
+def events_sanfrancisco(request):
+  events = Event.objects.filter(city='San Francisco')
+  return render(request, 'events/events_sanfrancisco.html', {
+    'events': events
+  })
