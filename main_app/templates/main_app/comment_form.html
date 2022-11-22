@@ -1,6 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Edit Comment</h1>
+<h1>Edit Comment</h1>
+
+  <p>username: {{ comment.user.username }}</p>
+  <p>updated at: {{ comment.updated_at }}</p>
+  <p>created at: {{ comment.created_at }}</p>
+  <p>
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{ form.as_p}}
+      <input type="submit" value="Submit!" class="btn">
+    </form>
+  </p>
 
 {% endblock %}

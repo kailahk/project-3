@@ -6,7 +6,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Event
+from .models import Event, Comment
 from .forms import CommentForm
 
 # Define the home view
@@ -48,12 +48,13 @@ def add_comment(request, event_id):
   return redirect('detail', event_id=event_id)
 
 class CommentUpdate(LoginRequiredMixin, UpdateView):
-    model = Event
+    model = Comment
     fields = ['content']
+    success_url = '/events'
 
 class CommentDelete(LoginRequiredMixin, DeleteView):
-    model = Event
-    success_url = '' #maybe add /events back
+    model = Comment
+    success_url = '/events' #maybe add /events back
 
 class EventCreate(LoginRequiredMixin, CreateView):
   model = Event

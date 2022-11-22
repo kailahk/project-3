@@ -20,11 +20,13 @@
         </div>
     </div>
     <div class="col s6">
+      {% if user.is_authenticated %}
       <form action="{% url 'add_comment' event.id %}" method="POST">
         {% csrf_token %}
         {{ comment_form.as_p }}
         <input type="submit" class="btn" value="Add Comment">
       </form>
+      {% endif %}
       <table class="striped">
         <thead>
           <tr><th>User</th><th>Content</th><th>Date</th><th></th></tr>
