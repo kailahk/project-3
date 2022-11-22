@@ -32,7 +32,6 @@ class Event(models.Model):
   address = models.CharField(max_length=100)
   city = models.CharField(max_length= 30, choices=CITIES, default='Seattle')
   neighborhood = models.CharField(max_length=50, choices=NEIGHBORHOODS, default='Queen Anne')
-  # comments = models.ManyToManyField(Comment)
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now=True)
   user = models.ForeignKey(User, on_delete=models.CASCADE)
