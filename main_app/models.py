@@ -34,3 +34,7 @@ class Comment(models.Model):
 
   class Meta:
     ordering = ['-created_at']
+
+  # def get_absolute_url(self):
+  #   print(self.event, 'testing')
+  #   return reverse('detail', kwargs={'event_id': self.event})
