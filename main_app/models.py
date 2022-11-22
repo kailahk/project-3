@@ -3,13 +3,35 @@ from django.urls import reverse
 from datetime import date
 from django.contrib.auth.models import User
 
+CITIES = (
+    ('Seattle', 'Seattle'),
+    ('Los Angeles', 'Los Angeles'),
+    ('San Francisco', 'San Francisco')
+)
+
+NEIGHBORHOODS = (
+  ('Queen Anne', 'Queen Anne'),
+  ('Capitol Hill', 'Capitol Hill'),
+  ('Downtown', 'Downtown'),
+  ('Belltown', 'Belltown'),
+  ('West Seattle', 'West Seattle'),
+  ('Ballard', 'Ballard'),
+  ('Fremont', 'Fremont'),
+  ('South Lake Union', 'South Lake Union'),
+  ('University District', 'University District'),
+  ('Pioneer Square', 'Pioneer Square'),
+  ('International District', 'International District'),
+  ('Eastlake', 'Eastlake')
+)
+
+
 class Event(models.Model):
   title = models.CharField(max_length=40)
   datetime = models.DateField('Date')
   description = models.TextField(max_length=1500)
   address = models.CharField(max_length=100)
-  neighborhood = models.CharField(max_length=50)
-  city = models.CharField(max_length= 30)
+  city = models.CharField(max_length= 30, choices=CITIES, default='Seattle')
+  neighborhood = models.CharField(max_length=50, choices=NEIGHBORHOODS, default='Queen Anne')
   # comments = models.ManyToManyField(Comment)
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now=True)
