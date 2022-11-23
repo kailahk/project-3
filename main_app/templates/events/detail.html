@@ -51,6 +51,9 @@
                 <td><a href="{% url 'comment_update' comment.id %}">Edit</a></td>
                 <td><a href="{% url 'comment_delete' comment.id %}">Delete</a></td>
               </div>
+              {% else %}
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
             </tr>
             {% endif %}
           {% endfor %}
