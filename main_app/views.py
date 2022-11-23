@@ -51,11 +51,13 @@ def add_comment(request, event_id):
 class CommentUpdate(LoginRequiredMixin, UpdateView):
     model = Comment
     fields = ['content']
-    success_url = '/events'
+    def get_success_url(self):
+      return f"/events/{self.object.event.id}"
 
 class CommentDelete(LoginRequiredMixin, DeleteView):
     model = Comment
-    success_url = '/events' #maybe add /events back
+    def get_success_url(self):
+      return f"/events/{self.object.event.id}"
 
 class EventCreate(LoginRequiredMixin, CreateView):
   model = Event
