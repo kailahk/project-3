@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-from datetime import date
+# from datetime import date
 from django.contrib.auth.models import User
 
 CITIES = (
@@ -27,7 +27,8 @@ NEIGHBORHOODS = (
 
 class Event(models.Model):
   title = models.CharField(max_length=40)
-  datetime = models.DateField('Date')
+  date = models.DateField('Date', default='2023-01-01')
+  time = models.TimeField('Time', default='12:00')
   description = models.TextField(max_length=1500)
   address = models.CharField(max_length=100)
   city = models.CharField(max_length= 30, choices=CITIES, default='Seattle')
