@@ -4,7 +4,7 @@
 <h1>Event Details</h1>
 
 <div class="row">
-  <div class="col s6 col-offset-3">
+  <div class="col s12">
     <div class="card">
         <div class="card-content">
           <span class="card-title">{{ event.title }}</span>
@@ -22,7 +22,8 @@
           {% endif %}
         </div>
     </div>
-    <div class="col s6">
+<!-- Add Comment -->
+    <div class="col s12">
       {% if user.is_authenticated %}
       <form action="{% url 'add_comment' event.id %}" method="POST">
         {% csrf_token %}
@@ -30,9 +31,10 @@
         <input type="submit" class="btn" value="Add Comment">
       </form>
       {% endif %}
+<!-- Comments table.. why does edit and delete come above this table? -->
       <table class="striped">
         <thead>
-          <tr><th>User</th><th>Content</th><th>Date</th><th></th></tr>
+          <tr><th>User</th><th>Content</th><th>Date</th></tr>
         </thead>
         <tbody>
           {% for comment in event.comment_set.all %}
@@ -43,21 +45,19 @@
               <td>{{ comment.updated_at }}</td>
               {% else %}
               <td>{{ comment.created_at }}</td>
-              <td>
-                
-              </td>
-              {% endif %}              
+              {% endif %}  
+              {% if comment.user == request.user %}
+              <div>
+                <td><a href="{% url 'comment_update' comment.id %}">Edit</a></td>
+                <td><a href="{% url 'comment_delete' comment.id %}">Delete</a></td>
+              </div>
             </tr>
-            {% if comment.user == request.user %}
-            <div class="card-action">
-              <a href="{% url 'comment_update' comment.id %}">Edit</a>
-              <a href="{% url 'comment_delete' comment.id %}">Delete</a>
-            </div>
             {% endif %}
           {% endfor %}
         </tbody>
       </table>
     </div>
+<!-- end of comment div -->
   </div>
 </div>
 {% endblock %}
