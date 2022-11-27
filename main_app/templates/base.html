@@ -26,10 +26,15 @@
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'my_index' %}">My Events</a></li>
                     <li><a href="{% url 'events_create' %}">Add Event</a></li>
-                    <li><a href="{% url 'events_seattle' %}">Seattle</a></li>
-                    <li><a href="{% url 'events_losangeles' %}">Los Angeles</a></li>
-                    <li><a href="{% url 'events_sanfrancisco' %}">San Francisco</a></li>
-                    <li><a href="{% url 'logout' %}">Welcome,&nbsp;{{ user.username }}<span> | Sign Out</span></a></li>
+                    <li>
+                        <a class="dropdown-trigger btn" href="#" data-target="dropdown1">Cities</a>
+                    </li>
+                    <ul id="dropdown1" class="dropdown-content">
+                        <li><a href="{% url 'events_seattle' %}">Seattle</a></li>
+                        <li><a href="{% url 'events_losangeles' %}">Los Angeles</a></li>
+                        <li><a href="{% url 'events_sanfrancisco' %}">San Francisco</a></li>
+                    </ul>
+                    <li><a href="{% url 'logout' %}">Welcome,&nbsp;{{ user.username }}!<span>&nbsp; Sign Out</span></a></li>
                     {% else %}
                     <li><a href="{% url 'signup' %}">Sign Up</a></li>
                     <li><a href="{% url 'login' %}">Log In</a></li>
@@ -40,11 +45,20 @@
     </header>
     <main class="container">
         {% block content %}
+
         {% endblock %}
     </main>
     <footer class="page-footer">
         <div class="right">All Rights Reserved, &copy; 2022 GetTogether &nbsp;</div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('hi')
+            var elems = document.querySelectorAll('.dropdown-trigger');
+            var instances = M.Dropdown.init(elems);
+        });
+    </script>
 </body>
 
 </html>
