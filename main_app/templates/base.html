@@ -27,7 +27,7 @@
                     <li><a href="{% url 'my_index' %}">My Events</a></li>
                     <li><a href="{% url 'events_create' %}">Add Event</a></li>
                     <li>
-                        <a class="dropdown-trigger btn" href="#" data-target="dropdown1">Cities</a>
+                        <a class="dropdown-trigger" href="#" data-target="dropdown1">Cities</a>
                     </li>
                     <ul id="dropdown1" class="dropdown-content">
                         <li><a href="{% url 'events_seattle' %}">Seattle</a></li>
@@ -54,7 +54,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            console.log('hi')
             var elems = document.querySelectorAll('.dropdown-trigger');
             var instances = M.Dropdown.init(elems);
         });
