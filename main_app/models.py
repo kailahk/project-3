@@ -43,6 +43,7 @@ class Event(models.Model):
 
   def get_absolute_url(self):
     return reverse('detail', kwargs={'event_id': self.id})
+
   
 class Comment(models.Model):
   content = models.CharField(max_length=150)

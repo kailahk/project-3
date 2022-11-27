@@ -1,6 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Home</h1>
+<h1>GetTogether</h1>
+<hr>
+<p>We are on a mission to bring individuals closer to their community by enabling community members to easily coordinate free and low cost events for all ages. <a href="{% url 'login' %}">Log in</a> or <a href="{% url 'signup' %}">sign up</a> to get started.</p>
+<h5>Let's get together!</h5>
+<br>
+<div class="carousel carousel-slider">
+    <img src="https://i.imgur.com/yuOniwi.png" alt="community members cleaning the park" class="carousel-item">
+    <img src="https://i.imgur.com/s4Ju3ya.png" alt="community members at a yard sale" class="carousel-item">
+    <img src="https://i.imgur.com/e52SSu8.png" alt="community members hiking" class="carousel-item">
+    <img src="https://i.imgur.com/uR7KpXW.png" alt="kids crafting" class="carousel-item">
+    <img src="https://i.imgur.com/cljujRR.png" alt="teens roasting marshmallows" class="carousel-item">
+    <img src="https://i.imgur.com/tjPWaaF.png" alt="community members gardening" class="carousel-item">
+    <img src="https://i.imgur.com/5zRoebq.png" alt="community members at a book club" class="carousel-item">
+    <img src="https://i.imgur.com/HR3o6BJ.png" alt="community members gardening" class="carousel-item">
+</div>
+<br>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems);
+  });
+</script>
 
 {% endblock %}
