@@ -9,7 +9,8 @@
     <a href="{% url 'detail' event.id %}">
       <span class="card-title">{{ event.title }}</span>
     </a>
-    <p>Date/Time: {{ event.datetime }}</p>
+    <p>Date: {{ event.date }}</p>
+    <p>Time: {{ event.time }}</p>
     <p>Description: {{ event.description }}</p>
     <p>Address: {{ event.address }}</p>
     <p>Neighborhood: {{ event.neighborhood }}</p>

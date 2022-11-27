@@ -18,11 +18,19 @@
 </form>
 
 <script>
-  const dateEl = document.getElementById('id_datetime');
+  const dateEl = document.getElementById('id_date');
   M.Datepicker.init(dateEl, {
     format: 'yyyy-mm-dd',
     defaultDate: new Date(),
     setDefaultDate: true,
+    autoClose: true
+  });
+
+  const timeEl = document.getElementById('id_time');
+  M.Timepicker.init(timeEl, {
+    // format: 'hh:mm', // consider changing time default to '%H:%M'
+    twelveHour: false,
+    showClearBtn: true,
     autoClose: true
   });
 
@@ -32,14 +40,6 @@
   const neighborhoodEl = document.getElementById('id_neighborhood');
   M.FormSelect.init(neighborhoodEl)
 
-  document.querySelector('form').addEventListener('click', function(evt) {
-    console.log(evt)
-    if (evt.target.value === 'Los Angeles') {
-      M.FormSelect.init(neighborhoodEl, {
-        'West LA': 'West LA'
-      })
-    }
-  })
 </script>
 
 
