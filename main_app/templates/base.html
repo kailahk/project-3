@@ -29,7 +29,7 @@
                     <li><a href="{% url 'events_seattle' %}">Seattle</a></li>
                     <li><a href="{% url 'events_losangeles' %}">Los Angeles</a></li>
                     <li><a href="{% url 'events_sanfrancisco' %}">San Francisco</a></li>
-                    <li><a href="{% url 'logout' %}">Welcome,&nbsp;<span>{{ user.username }} | Sign Out</span></a></li>
+                    <li><a href="{% url 'logout' %}">Welcome,&nbsp;{{ user.username }}<span> | Sign Out</span></a></li>
                     {% else %}
                     <li><a href="{% url 'signup' %}">Sign Up</a></li>
                     <li><a href="{% url 'login' %}">Log In</a></li>
