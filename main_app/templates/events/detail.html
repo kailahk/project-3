@@ -6,23 +6,34 @@
 <div class="row">
   <div class="col s12">
     <div class="card">
-        <div class="card-content">
-          <span class="card-title">{{ event.title }}</span>
-          <p>Date: {{ event.date }}</p>
-          <p>Time: {{ event.time }}</p>
-          <p>Description: {{ event.description }}</p>
-          <p>Address: {{ event.address }}</p>
-          <p>Neighborhood: {{ event.neighborhood }}</p>
-          <p>City: {{ event.city }}</p>
-          {% if event.user == request.user %}
-          <div class="card-action">
-            <a href="{% url 'events_update' event.id %}">Edit</a>
-            <a href="{% url 'events_delete' event.id %}">Delete</a>
-          </div>
-          {% endif %}
+      <div class="card-content">
+        <span class="card-title">{{ event.title }}</span>
+        <p>Date: {{ event.date }}</p>
+        <p>Time: {{ event.time }}</p>
+        <p>Description: {{ event.description }}</p>
+        <p>Address: {{ event.address }}</p>
+        <p>Neighborhood: {{ event.neighborhood }}</p>
+        <p>City: {{ event.city }}</p>
+        {% if event.user == request.user %}
+        <div class="card-action">
+          <a href="{% url 'events_update' event.id %}">Edit</a>
+          <a href="{% url 'events_delete' event.id %}">Delete</a>
         </div>
+        {% endif %}
+      </div>
     </div>
-<!-- Add Comment -->
+    {% for photo in event.photo_set.all %}
+    <img class="responsive-img card-panel" src="{{photo.url}}">
+    {% empty %}
+    <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+    {% endfor %}
+    <form action="{% url 'add_photo' event.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+      {% csrf_token %}
+      <input type="file" name="photo-file">
+      <br><br>
+      <button type="submit" class="btn">Upload Photo</button>
+    </form>
+    <!-- Add Comment -->
     <div class="col s12">
       {% if user.is_authenticated %}
       <form action="{% url 'add_comment' event.id %}" method="POST">
@@ -31,36 +42,40 @@
         <input type="submit" class="btn" value="Add Comment">
       </form>
       {% endif %}
-<!-- Comments table.. why does edit and delete come above this table? -->
+      <!-- Comments table.. why does edit and delete come above this table? -->
       <table class="striped">
         <thead>
-          <tr><th>User</th><th>Content</th><th>Date</th></tr>
+          <tr>
+            <th>User</th>
+            <th>Content</th>
+            <th>Date</th>
+          </tr>
         </thead>
         <tbody>
           {% for comment in event.comment_set.all %}
-            <tr>
-              <td>{{ comment.user.username }}</td>
-              <td>{{ comment.content }}</td>
-              {% if comment.updated_at %}
-              <td>{{ comment.updated_at }}</td>
-              {% else %}
-              <td>{{ comment.created_at }}</td>
-              {% endif %}  
-              {% if comment.user == request.user %}
-              <div>
-                <td><a href="{% url 'comment_update' comment.id %}">Edit</a></td>
-                <td><a href="{% url 'comment_delete' comment.id %}">Delete</a></td>
-              </div>
-              {% else %}
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
+          <tr>
+            <td>{{ comment.user.username }}</td>
+            <td>{{ comment.content }}</td>
+            {% if comment.updated_at %}
+            <td>{{ comment.updated_at }}</td>
+            {% else %}
+            <td>{{ comment.created_at }}</td>
             {% endif %}
+            {% if comment.user == request.user %}
+            <div>
+              <td><a href="{% url 'comment_update' comment.id %}">Edit</a></td>
+              <td><a href="{% url 'comment_delete' comment.id %}">Delete</a></td>
+            </div>
+            {% else %}
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          {% endif %}
           {% endfor %}
         </tbody>
       </table>
     </div>
-<!-- end of comment div -->
+    <!-- end of comment div -->
   </div>
 </div>
 {% endblock %}
