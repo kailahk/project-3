@@ -6,6 +6,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-color: #bcdcc13e;
 }
 
 main {
@@ -21,9 +22,30 @@ nav {
   background-color: #4A5954;
 }
 
-
-
 .page-footer {
   background-color: #4A5954;
+}
+
+.carousel-item {
+  width: auto !important;
+}
+
+.btn {
+  background-color: #846267;
+}
+
+.btn:hover {
+  background-color: #70877F;
+}
+
+.card .card-title {
+  font-size: 32px;
+  color: #4A5954;
+  font-weight: 600;
+}
+
+.card {
+  background-color: #F9F7F1;
+  
 }
 
