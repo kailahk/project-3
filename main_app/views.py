@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Event, Comment, Photo
 from .forms import CommentForm
+from datetime import date
 
 # Define the home view
 def home(request):
@@ -22,8 +23,10 @@ def about(request):
 
 def events_index(request):
   events = Event.objects.all()
+  today = date.today
   return render(request, 'events/index.html', {
-    'events': events
+    'events': events,
+    'today': today
   })
 
 def events_detail(request, event_id):
@@ -95,26 +98,34 @@ def signup(request):
 @login_required
 def events_my_index(request):
   events = Event.objects.filter(user=request.user)
+  today = date.today
   return render(request, 'events/my_index.html', {
-    'events': events
+    'events': events,
+    'today': today
   })
 
 def events_seattle(request):
   events = Event.objects.filter(city='Seattle')
+  today = date.today
   return render(request, 'events/events_seattle.html', {
-    'events': events
+    'events': events,
+    'today': today
   })
 
 def events_losangeles(request):
   events = Event.objects.filter(city='Los Angeles')
+  today = date.today
   return render(request, 'events/events_losangeles.html', {
-    'events': events
+    'events': events,
+    'today': today
   })
 
 def events_sanfrancisco(request):
   events = Event.objects.filter(city='San Francisco')
+  today = date.today
   return render(request, 'events/events_sanfrancisco.html', {
-    'events': events
+    'events': events,
+    'today': today
   })
 
 def add_photo(request, event_id):
