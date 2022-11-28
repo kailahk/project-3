@@ -64,7 +64,7 @@ class CommentDelete(LoginRequiredMixin, DeleteView):
 
 class EventCreate(LoginRequiredMixin, CreateView):
   model = Event
-  fields = ['title', 'date', 'time', 'description', 'address', 'neighborhood', 'city']
+  fields = ['title', 'date', 'time', 'description', 'address', 'city', 'neighborhood']
 
   def form_valid(self, form):
     form.instance.user = self.request.user

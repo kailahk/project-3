@@ -10,6 +10,7 @@ CITIES = (
 )
 
 NEIGHBORHOODS = (
+  ('SEATTLE NEIGBORHOODS, CHOOSE ONE', 'SEATTLE NEIGBORHOODS, CHOOSE ONE BELOW'),
   ('Queen Anne', 'Queen Anne'),
   ('Capitol Hill', 'Capitol Hill'),
   ('Downtown', 'Downtown'),
@@ -21,8 +22,41 @@ NEIGHBORHOODS = (
   ('University District', 'University District'),
   ('Pioneer Square', 'Pioneer Square'),
   ('International District', 'International District'),
-  ('Eastlake', 'Eastlake')
+  ('Eastlake', 'Eastlake'),
+  ('SAN FRANCISCO NEIGBORHOODS, CHOOSE ONE', 'SAN FRANCISO NEIGBORHOODS, CHOOSE ONE BELOW'),
+  ('Sunset', 'Sunset' ),
+  ('Richmond', 'Richmond'),
+  ('Ingleside', 'Ingleside'),
+  ('Haight', 'Haight'),
+  ('Presidio', 'Presidio'),
+  ('Mission', 'Mission'),
+  ('Pacific Heights', 'Pacific Heights'),
+  ('Portola', 'Portola'),
+  ('Castro', 'Castro'),
+  ('Nob Hill', 'Nob Hill'),
+  ('South of Market', 'South of Market'),
+  ('Noe Valley', 'Noe Valley'),
+  ('LOS ANGELES NEIGBORHOODS, CHOOSE ONE', 'LOS ANGELES NEIGBORHOODS, CHOOSE ONE BELOW'),
+  ('Hollywood', 'Hollywood'),
+  ('Downtown LA', 'Downtown LA'),
+  ('Venice', 'Venice'),
+  ('Koreatown', 'Koreatown'),
+  ('North Hollywood', 'North Hollywood'),
+  ('Brentwood', 'Brentwood'),
+  ('Sherman Oaks', 'Sherman Oaks'),
+  ('Echo Park', 'Echo Park'),
+  ('Encino', 'Encino'),
+  ('Beverly Hills', 'Beverly Hills'),
+  ('Los Feliz', 'Los Feliz'),
+  ('Hollywood Hills', 'Hollywood Hills'),
+  ('Leimert Park', 'Leimert Park'),
+  ('Larchmont Village', 'Larchmont Village'),
+  ('West Hollywood', 'West Hollywood'),
+  ('East Hollywood', 'East Hollywood'),
+  ('Silver Lake', 'Silver Lake'),
+  ('Santa Monica', 'Santa Monica'),
 )
+
 
 
 class Event(models.Model):
