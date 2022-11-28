@@ -8,22 +8,22 @@
 <div class="card">
   <div class="row">
     <div class="col s6">
-    <div class="card-content">
-      <a href="{% url 'detail' event.id %}">
-        <span class="card-title">{{ event.title }}</span>
-      </a>
-      <p>Date: {{ event.date }}</p>
-      <p>Time: {{ event.time }}</p>
-      <p>Description: {{ event.description }}</p>
-      <p>Address: {{ event.address }}</p>
-      <p>Neighborhood: {{ event.neighborhood }}</p>
-      <p>City: {{ event.city }}</p>
+      <div class="card-content">
+          <a href="{% url 'detail' event.id %}">
+            <span class="card-title">{{ event.title }}</span>
+          </a>
+        <p>Date: {{ event.date }}</p>
+        <p>Time: {{ event.time }}</p>
+        <p>Description: {{ event.description }}</p>
+        <p>Address: {{ event.address }}</p>
+        <p>Neighborhood: {{ event.neighborhood }}</p>
+        <p>City: {{ event.city }}</p>
+      </div>
     </div>
-  </div>
     <div class="col s6">
       <div>
         {% for photo in event.photo_set.all %}
-        {% if forloop.counter == 1 %} 
+        {% if forloop.counter == 1 %}
         <img class="responsive-img card-panel" src="{{photo.url}}">
         {% endif %}
         {% endfor %}
@@ -38,34 +38,33 @@
 <br>
 <h2>Past Events</h2>
 {% for event in events %}
-{% if event.date < today %} 
-<div class="card">
+{% if event.date < today %} <div class="card">
   <div class="row">
     <div class="col s6">
-    <div class="card-content">
-      <a href="{% url 'detail' event.id %}">
-        <span class="card-title">{{ event.title }}</span>
-      </a>
-      <p>Date: {{ event.date }}</p>
-      <p>Time: {{ event.time }}</p>
-      <p>Description: {{ event.description }}</p>
-      <p>Address: {{ event.address }}</p>
-      <p>Neighborhood: {{ event.neighborhood }}</p>
-      <p>City: {{ event.city }}</p>
+      <div class="card-content">
+        <a href="{% url 'detail' event.id %}">
+          <span class="card-title">{{ event.title }}</span>
+        </a>
+        <p>Date: {{ event.date }}</p>
+        <p>Time: {{ event.time }}</p>
+        <p>Description: {{ event.description }}</p>
+        <p>Address: {{ event.address }}</p>
+        <p>Neighborhood: {{ event.neighborhood }}</p>
+        <p>City: {{ event.city }}</p>
+      </div>
     </div>
-  </div>
     <div class="col s6">
       <div>
         {% for photo in event.photo_set.all %}
-        {% if forloop.counter == 1 %} 
+        {% if forloop.counter == 1 %}
         <img class="responsive-img card-panel" src="{{photo.url}}">
         {% endif %}
         {% endfor %}
       </div>
     </div>
   </div>
-</div>
+  </div>
   {% endif %}
   {% endfor %}
-  
+
   {% endblock %}
