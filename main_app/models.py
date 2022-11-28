@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
-# from datetime import date
+from datetime import date
+from django.core.validators import MinValueValidator
 from django.contrib.auth.models import User
 
 CITIES = (
@@ -61,7 +62,7 @@ NEIGHBORHOODS = (
 
 class Event(models.Model):
   title = models.CharField(max_length=40)
-  date = models.DateField('Date', default='2023-01-01')
+  date = models.DateField(validators=[MinValueValidator(date.today)])
   time = models.TimeField('Time', default='12:00')
   description = models.TextField(max_length=1500)
   address = models.CharField(max_length=100)

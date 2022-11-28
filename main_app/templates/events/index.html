@@ -4,6 +4,8 @@
 <h1>All Events</h1>
 
 {% for event in events %}
+  {% now "Y-m-d" as todays_date %}
+  {% if todays_date >= someday|date:"Y-m-d" %}
 <div class="card">
   <div class="card-content">
     <a href="{% url 'detail' event.id %}">
@@ -17,6 +19,28 @@
     <p>City: {{ event.city }}</p>
   </div>
 </div>
+  {% endif %}
 {% endfor %}
-
+<br>
+<hr>
+<br>
+<h2>Past Events</h2>
+{% for event in events %}
+  {% now "Y-m-d" as todays_date %}
+  {% if todays_date < someday|date:"Y-m-d" %}
+<div class="card">
+  <div class="card-content">
+    <a href="{% url 'detail' event.id %}">
+      <span class="card-title">{{ event.title }}</span>
+    </a>
+    <p>Date: {{ event.date }}</p>
+    <p>Time: {{ event.time }}</p>
+    <p>Description: {{ event.description }}</p>
+    <p>Address: {{ event.address }}</p>
+    <p>Neighborhood: {{ event.neighborhood }}</p>
+    <p>City: {{ event.city }}</p>
+  </div>
+</div>
+  {% endif %}
+{% endfor %}
 {% endblock %}
