@@ -1,3 +1,7 @@
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
 body {
   display: flex;
   min-height: 100vh;
@@ -12,3 +16,14 @@ footer.page-footer {
   padding-top: 0;
   text-align: right;
 }
+
+nav {
+  background-color: #4A5954;
+}
+
+
+
+.page-footer {
+  background-color: #4A5954;
+}
+
