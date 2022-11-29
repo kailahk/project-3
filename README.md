@@ -33,23 +33,26 @@ Users can learn more about the app and its creators on the About page.
 
 ![Amazon AWS](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
 
-![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
-![HTML5](https://img.shields.io/badge/-HTML5-05122A?style=flat&logo=html5)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-![CSS3](https://img.shields.io/badge/-CSS-05122A?style=flat&logo=css3)
+![Material Design](https://img.shields.io/badge/material%20design-757575?style=for-the-badge&logo=material%20design&logoColor=white)
 
-![Trello](https://img.shields.io/badge/-Trello-05122A?style=flat&logo=trello)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
-![Heroku](https://img.shields.io/badge/-Heroku-05122A?style=flat&logo=heroku)
+![Trello]([https://img.shields.io/badge/-Trello-05122A?style=flat&logo=trello](https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white))
 
-![Github](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)
+![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?&style=for-the-badge&logo=Canva&logoColor=white)
+
+![Heroku]([https://img.shields.io/badge/-Heroku-05122A?style=flat&logo=heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white))
+
+![Github]([https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white))
 
 # Planning
 
-Check out our [Trello Board](https://trello.com/b/IAmg8cvS/project-3-community-events) here to see
-how we organized our planning!
-[Click to check out our pitch deck!](https://www.canva.com/design/DAFSQBJCN4s/40NIs9nR7Egds8a3csrXLA/view?utm_content=DAFSQBJCN4s&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
+Check out our [planning on Trello!](https://trello.com/b/IAmg8cvS/project-3-community-events)
+Check out our [pitch deck on Canva!](https://www.canva.com/design/DAFSQBJCN4s/40NIs9nR7Egds8a3csrXLA/view?utm_content=DAFSQBJCN4s&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
 # Getting Started
 
