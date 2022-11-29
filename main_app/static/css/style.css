@@ -41,7 +41,7 @@ form {
 }
 
 .btn:hover {
-  background-color: #70877F;
+  background-color: #4A5954;
 }
 
 .card .card-title {
@@ -76,4 +76,12 @@ input > #file-upload-button {
     -webkit-transition: background-color .2s ease-out;
     transition: background-color .2s ease-out;
     cursor: pointer;
+}
+
+form.comment-form {
+  background-color: #bcdcc13e;
+}
+
+img.card-panel {
+  width: 60vmin;
 }
