@@ -4,25 +4,26 @@ Bouldering Paradise is fun website designed to offer climbers a way to connect
 over their shared passion for bouldering. Folks can post photos, descriptions, 
 comments, and more! 
 
-# Screenshots:
+# Images:
 
-Here is the landing page for a visitor! Folks can sign in with Google to access 
+Here is the landing page for visitors! Folks can sign up or log in if they already have an account to access 
 more features.
-![img_1.png](img_1.png)
+![Screen Shot 2022-11-29 at 3 44 29 PM](https://user-images.githubusercontent.com/112985738/204673227-d2b2da60-1031-405a-929e-b54bc430a556.png)
 
-Folks can click on "read more" to access further details about the post and a 
-full-size image of the climb.
-![img.png](img.png)
+Users can view all events on our site, as well as view events specifically by city.
+![Screen Shot 2022-11-29 at 3 44 59 PM](https://user-images.githubusercontent.com/112985738/204673358-ecbd3c0d-9058-4bbf-9612-1c3b937cce92.png)
+![Screen Shot 2022-11-29 at 3 45 57 PM](https://user-images.githubusercontent.com/112985738/204673368-9b6fa044-6794-4d0a-9278-d0265951a3a5.png)
 
-Creating a post is easy! Just fill out the five fields and boom!! You are a 
-contributor.
-![img_2.png](img_2.png)
+Creating an event is easy! Just fill out the five fields and boom!! You are an active member of your community!
+![Screen Shot 2022-11-29 at 3 45 12 PM](https://user-images.githubusercontent.com/112985738/204673405-ef930cef-18f3-4d71-930e-c00077445b1e.png)
 
+On the event details pages, users can see all of the relevant information about the event they may want to attend, as well as participate in a discourse with their community in the comments section, upload photos, and rate past events!
+![Screen Shot 2022-11-29 at 3 46 20 PM](https://user-images.githubusercontent.com/112985738/204673672-a0027d78-9365-4f16-9208-e32b2af47e7b.png)
+![Screen Shot 2022-11-29 at 3 46 37 PM](https://user-images.githubusercontent.com/112985738/204673676-d6e9902f-5653-4739-955d-d10d78c18c2e.png)
 
-Clicking the edit post link will take you to a form where you can edit the
-boulder details if you are the author. You may also delete a post (and comments 
-on a post) if you are the author.
-![img_3.png](img_3.png)
+Users can learn more about the app and its creators on the About page.
+![Screen Shot 2022-11-29 at 3 45 30 PM](https://user-images.githubusercontent.com/112985738/204673504-6e816dae-596e-484e-8899-c2e69aafc02b.png)
+![Screen Shot 2022-11-29 at 3 45 42 PM](https://user-images.githubusercontent.com/112985738/204673525-2f90f445-2bb5-4d1a-b9cf-915e848a7508.png)
 
 # Technologies Used
 
