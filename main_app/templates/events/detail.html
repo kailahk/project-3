@@ -8,12 +8,13 @@
     <div class="card">
       <div class="card-content">
         <span class="card-title">{{ event.title }}</span>
-        <p>Date: {{ event.date }}</p>
-        <p>Time: {{ event.time }}</p>
-        <p>Description: {{ event.description }}</p>
-        <p>Address: {{ event.address }}</p>
-        <p>Neighborhood: {{ event.neighborhood }}</p>
-        <p>City: {{ event.city }}</p>
+        <h6>Date: &nbsp;{{ event.date }}</h6>
+        <h6>Time: &nbsp;{{ event.time }}</h6>
+        <h6>Description: &nbsp;{{ event.description }}</h6>
+        <h6>Address: &nbsp;{{ event.address }}</h6>
+        <h6>Neighborhood: &nbsp;{{ event.neighborhood }}</h6>
+        <h6>City: &nbsp;{{ event.city }}</h6>
+        <br>
         {% if event.user == request.user %}
         <div class="card-action">
           <a class="btn" href="{% url 'events_update' event.id %}">Edit</a>&nbsp;&nbsp;
