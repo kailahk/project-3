@@ -5,7 +5,7 @@
 
 <p class="red-text">{{ error_message }}</p>
 
-<form method="POST" action="{% url 'signup' %}">
+<form method="POST" action="{% url 'signup' %}" class="z-depth-3">
   {% csrf_token %}
   {{ form.as_p }}
   <input type="submit" class="btn" value="Sign Up">

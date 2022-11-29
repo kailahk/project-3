@@ -90,3 +90,12 @@ footer.page-footer {
   justify-content: center;
   align-items: center;
 }
+
+.confirm-delete {
+  background-color: #bcdcc100;
+}
+
+.item-to-delete {
+  color: #846267;
+  font-weight: 500;
+}
