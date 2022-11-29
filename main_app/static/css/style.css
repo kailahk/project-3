@@ -22,6 +22,12 @@ nav {
   background-color: #4A5954;
 }
 
+form {
+  background-color: #F9F7F1;
+  padding: 20px;
+  border-radius: 1%
+  
+}
 .page-footer {
   background-color: #4A5954;
 }
@@ -46,6 +52,28 @@ nav {
 
 .card {
   background-color: #F9F7F1;
-  
 }
 
+.card-panel {
+  background-color: #F9F7F1 !important;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+  color: #4A5954;
+}
+
+.card .card-action {
+  padding-left: 0px;
+}
+
+
+input > #file-upload-button {
+  text-decoration: none;
+    color: #fff;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+}

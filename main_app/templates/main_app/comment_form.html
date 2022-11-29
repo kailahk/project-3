@@ -7,7 +7,7 @@
   <p>updated at: {{ comment.updated_at }}</p>
   <p>created at: {{ comment.created_at }}</p>
   <p>
-    <form action="" method="POST">
+    <form class="z-depth-3" action="" method="POST">
       {% csrf_token %}
       {{ form.as_p}}
       <input type="submit" value="Submit!" class="btn">
