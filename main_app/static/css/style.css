@@ -41,13 +41,17 @@ form {
 }
 
 .btn:hover {
-  background-color: #70877F;
+  background-color: #4A5954;
 }
 
 .card .card-title {
-  font-size: 32px;
+  font-size: 40px;
   color: #4A5954;
   font-weight: 600;
+}
+
+.card .card-content .card-title {
+  margin-bottom: 3vmin;
 }
 
 .card {
@@ -64,16 +68,25 @@ form {
 
 .card .card-action {
   padding-left: 0px;
+  padding-bottom: 0px;
 }
 
 
-input > #file-upload-button {
-  text-decoration: none;
-    color: #fff;
-    background-color: #26a69a;
-    text-align: center;
-    letter-spacing: .5px;
-    -webkit-transition: background-color .2s ease-out;
-    transition: background-color .2s ease-out;
-    cursor: pointer;
+form.comment-form {
+  background-color: #bcdcc13e;
+}
+
+img.card-panel {
+  width: 60vmin;
+}
+
+a, nav > a {
+  color: #4A5954;
+}
+
+footer.page-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

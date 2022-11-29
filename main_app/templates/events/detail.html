@@ -8,12 +8,13 @@
     <div class="card">
       <div class="card-content">
         <span class="card-title">{{ event.title }}</span>
-        <p>Date: {{ event.date }}</p>
-        <p>Time: {{ event.time }}</p>
-        <p>Description: {{ event.description }}</p>
-        <p>Address: {{ event.address }}</p>
-        <p>Neighborhood: {{ event.neighborhood }}</p>
-        <p>City: {{ event.city }}</p>
+        <h6>Date: &nbsp;{{ event.date }}</h6>
+        <h6>Time: &nbsp;{{ event.time }}</h6>
+        <h6>Description: &nbsp;{{ event.description }}</h6>
+        <h6>Address: &nbsp;{{ event.address }}</h6>
+        <h6>Neighborhood: &nbsp;{{ event.neighborhood }}</h6>
+        <h6>City: &nbsp;{{ event.city }}</h6>
+        <br>
         {% if event.user == request.user %}
         <div class="card-action">
           <a class="btn" href="{% url 'events_update' event.id %}">Edit</a>&nbsp;&nbsp;
@@ -23,7 +24,7 @@
       </div>
     </div>
     {% for photo in event.photo_set.all %}
-    <img class="responsive-img card-panel" src="{{photo.url}}">
+    <img class="responsive-img card-panel" src="{{photo.url}}">&nbsp;&nbsp;&nbsp;&nbsp;
     {% empty %}
     <div class="card-panel center-align">No Photos Uploaded</div>
     {% endfor %}
@@ -34,9 +35,10 @@
       <button type="submit" class="btn">Upload Photo</button>
     </form>
     <!-- Add Comment -->
+    <h3>Comments</h3>
     <div class="col s12">
       {% if user.is_authenticated %}
-      <form class="z-depth-1" action="{% url 'add_comment' event.id %}" method="POST">
+      <form class="comment-form" action="{% url 'add_comment' event.id %}" method="POST">
         {% csrf_token %}
         {{ comment_form.as_p }}
         <input type="submit" class="btn" value="Add Comment">
