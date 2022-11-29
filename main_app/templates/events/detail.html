@@ -28,12 +28,14 @@
     {% empty %}
     <div class="card-panel center-align">No Photos Uploaded</div>
     {% endfor %}
+    {% if user.is_authenticated %}
     <form action="{% url 'add_photo' event.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
       {% csrf_token %}
       <input type="file" name="photo-file">
       <br><br>
       <button type="submit" class="btn">Upload Photo</button>
     </form>
+    {% endif %}
     <!-- Add Comment -->
     <h3>Comments</h3>
     <div class="col s12">
