@@ -51,7 +51,7 @@ Users can learn more about the app and its creators on the About page.
 
 # Planning
 
-Check out our [planning on Trello!](https://trello.com/b/IAmg8cvS/project-3-community-events) and 
+Check out our [planning on Trello](https://trello.com/b/IAmg8cvS/project-3-community-events) and 
 our [pitch deck on Canva!](https://www.canva.com/design/DAFSQBJCN4s/40NIs9nR7Egds8a3csrXLA/view?utm_content=DAFSQBJCN4s&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
 # Getting Started
