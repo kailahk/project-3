@@ -3,6 +3,7 @@ from django.urls import reverse
 from datetime import date
 from django.core.validators import MinValueValidator
 from django.contrib.auth.models import User
+from django.db.models import Avg
 
 CITIES = (
     ('Seattle', 'Seattle'),
@@ -72,6 +73,8 @@ class Event(models.Model):
   updated_at = models.DateTimeField(auto_now=True)
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+  def average_rating(self) -> float:
+    return Rating.objects.filter(event=self).aggregate(Avg("rating"))["rating__avg"] or 0
 
   def __str__(self):
     return f'{self.title} ({self.id})'
@@ -79,6 +82,13 @@ class Event(models.Model):
   def get_absolute_url(self):
     return reverse('detail', kwargs={'event_id': self.id})
 
+class Rating(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    rating = models.IntegerField(default=0)
+
+    def __str__(self):
+      return f"{self.event.title}: {self.rating}"
   
 class Comment(models.Model):
   content = models.CharField(max_length=150)

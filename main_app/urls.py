@@ -18,4 +18,5 @@ urlpatterns = [
   path('events/events_seattle/', views.events_seattle, name='events_seattle'),
   path('events/events_losangeles/', views.events_losangeles, name='events_losangeles'),
   path('events/events_sanfrancisco/', views.events_sanfrancisco, name='events_sanfrancisco'),
-]
+  path('rate/<int:event_id>/', views.rate, name='add_rating'),
+] 

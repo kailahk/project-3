@@ -9,7 +9,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Event, Comment, Photo
+from .models import Event, Comment, Photo, Rating
 from .forms import CommentForm
 from datetime import date
 
@@ -24,21 +24,31 @@ def about(request):
 def events_index(request):
   events = Event.objects.all()
   today = date.today
+  for event in events:
+    rating = Rating.objects.filter(event=event, user=request.user).first()
+    event.user_rating = rating.rating if rating else 0    
   return render(request, 'events/index.html', {
     'events': events,
     'today': today
   })
 
+def rate(request, event_id):
+    event = Event.objects.get(id=event_id)
+    Rating.objects.filter(event=event_id, user=request.user).delete()
+    r = Rating(user=request.user, rating=request.POST['rating'], event=event)
+    r.save()
+    print(request.POST['rating'])
+    return redirect('detail', event_id = event_id)
+
 def events_detail(request, event_id):
   event = Event.objects.get(id=event_id)
+  today = date.today 
   comment_form = CommentForm()
   return render(request, 'events/detail.html', {
     'event': event,
     'comment_form': comment_form,
+    'today': today
   })
-
-# class EventDetail(DetailView):
-#   model = Event
 
 @login_required
 def add_comment(request, event_id):
