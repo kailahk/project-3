@@ -16,8 +16,8 @@
         <p>City: {{ event.city }}</p>
         {% if event.user == request.user %}
         <div class="card-action">
-          <a href="{% url 'events_update' event.id %}">Edit</a>
-          <a href="{% url 'events_delete' event.id %}">Delete</a>
+          <a class="btn" href="{% url 'events_update' event.id %}">Edit</a>&nbsp;&nbsp;
+          <a class="btn" href="{% url 'events_delete' event.id %}">Delete</a>
         </div>
         {% endif %}
       </div>
@@ -25,7 +25,7 @@
     {% for photo in event.photo_set.all %}
     <img class="responsive-img card-panel" src="{{photo.url}}">
     {% empty %}
-    <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+    <div class="card-panel center-align">No Photos Uploaded</div>
     {% endfor %}
     <form action="{% url 'add_photo' event.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
       {% csrf_token %}
@@ -36,14 +36,14 @@
     <!-- Add Comment -->
     <div class="col s12">
       {% if user.is_authenticated %}
-      <form action="{% url 'add_comment' event.id %}" method="POST">
+      <form class="z-depth-1" action="{% url 'add_comment' event.id %}" method="POST">
         {% csrf_token %}
         {{ comment_form.as_p }}
         <input type="submit" class="btn" value="Add Comment">
       </form>
       {% endif %}
       <!-- Comments table.. why does edit and delete come above this table? -->
-      <table class="striped">
+      <table class="centered">
         <thead>
           <tr>
             <th>User</th>
