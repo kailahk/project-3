@@ -50,10 +50,6 @@ form {
   font-weight: 600;
 }
 
-.card .card-content .card-title {
-  margin-bottom: 3vmin;
-}
-
 .card {
   background-color: #F9F7F1;
 }
@@ -98,4 +94,28 @@ footer.page-footer {
 .item-to-delete {
   color: #846267;
   font-weight: 500;
+}
+
+.star-btn {
+  border: 0;
+  background: transparent;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+.star-btn:hover,
+.star-btn:hover + .star-btn,
+.star-btn:hover + .star-btn + .star-btn,
+.star-btn:hover + .star-btn + .star-btn + .star-btn,
+.star-btn:hover + .star-btn + .star-btn + .star-btn + .star-btn {
+  color: #faa;
+}
+
+#star-btn {
+  display: flex; 
+  flex-flow: row-reverse;   
+  justify-content: flex-end;
+  padding-left: 0;
 }

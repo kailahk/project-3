@@ -8,6 +8,18 @@
     <div class="card">
       <div class="card-content">
         <span class="card-title">{{ event.title }}</span>
+        {% if event.date < today %}
+        <form id="star-btn" action=" {% url 'add_rating' event.id %}" method="POST">
+          {% csrf_token %}
+          <button class="star-btn" type="submit" name="rating" value="5">&#9733;</button>
+          <button class="star-btn" type="submit" name="rating" value="4">&#9733;</button>
+          <button class="star-btn" type="submit" name="rating" value="3">&#9733;</button>
+          <button class="star-btn" type="submit" name="rating" value="2">&#9733;</button>
+          <button class="star-btn" type="submit" name="rating" value="1">&#9733;</button>
+        </form>
+        {% else %}
+        <br>
+        {% endif %}
         <h6>Date: &nbsp;{{ event.date }}</h6>
         <h6>Time: &nbsp;{{ event.time }}</h6>
         <h6>Description: &nbsp;{{ event.description }}</h6>
@@ -82,4 +94,18 @@
     <!-- end of comment div -->
   </div>
 </div>
+<!-- <script>
+  const rate = (rating, event_id) => {
+      fetch(`/rate/${event_id}/${rating}/`, {
+          method: 'GET',
+          headers: {
+              'Content-Type': 'application/json'
+          }
+      }).then(rest => {
+          window.location.reload();
+          // you may want to update the rating here
+          // to simplify stuff, I just reload the page
+      })
+  }
+</script> -->
 {% endblock %}

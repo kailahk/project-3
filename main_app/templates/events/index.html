@@ -12,6 +12,7 @@
           <a href="{% url 'detail' event.id %}">
             <span class="card-title">{{ event.title }}</span>
           </a>
+          <br>
         <p>Date: {{ event.date }}</p>
         <p>Time: {{ event.time }}</p>
         <p>Description: {{ event.description }}</p>
@@ -45,6 +46,7 @@
       <div class="card-content">
         <a href="{% url 'detail' event.id %}">
           <span class="card-title">{{ event.title }}</span>
+          <br>
         </a>
         <p>Date: {{ event.date }}</p>
         <p>Time: {{ event.time }}</p>
@@ -55,6 +57,17 @@
       </div>
     </div>
     <div class="col s6">
+      <div>
+        <form id="star-btn" action="" method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="rating[event_id]" value="3">
+          <button class="star-btn" type="submit" name="rating[rating]" value="5">&#9733;</button>
+          <button class="star-btn" type="submit" name="rating[rating]" value="4">&#9733;</button>
+          <button class="star-btn" type="submit" name="rating[rating]" value="3">&#9733;</button>
+          <button class="star-btn" type="submit" name="rating[rating]" value="2">&#9733;</button>
+          <button class="star-btn" type="submit" name="rating[rating]" value="1">&#9733;</button>
+        </form>
+      </div>
       <div>
         {% for photo in event.photo_set.all %}
         {% if forloop.counter == 1 %}
@@ -67,4 +80,18 @@
   </div>
   {% endif %}
   {% endfor %}
+  <!-- <script>
+    const rate = (rating, event_id) => {
+        fetch(`/rate/${event_id}/${rating}/`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(rest => {
+            window.location.reload();
+            // you may want to update the rating here
+            // to simplify stuff, I just reload the page
+        })
+    }
+  </script> -->
   {% endblock %}
