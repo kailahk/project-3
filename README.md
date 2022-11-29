@@ -1,8 +1,6 @@
 # GetTogether
 
-Bouldering Paradise is fun website designed to offer climbers a way to connect 
-over their shared passion for bouldering. Folks can post photos, descriptions, 
-comments, and more! 
+GetTogether is an app we desigend to bring individuals closer to their community by making it easy to organize local and affordable events for all ages. Let’s GetTogether!
 
 # Images:
 
