@@ -35,7 +35,6 @@
 {% endfor %}
 <br>
 <hr>
-<br>
 <h2>Past Events</h2>
 {% for event in events %}
 {% if event.date < today %} 
@@ -54,10 +53,10 @@
       <p>City: {{ event.city }}</p>
     </div>
   </div>
-  <div class="col s6" id="star-field">
-    <div>
-      <br>
-      <p>Average Rating</p>
+  <div class="col s6">
+    <br>
+    <p>Average Rating</p>
+    <div id="star-field">
       {% if event.average_rating == 1 %}
       <span class="yes-star">&#9733;</span>
       <span class="no-star">&#9733;</span>

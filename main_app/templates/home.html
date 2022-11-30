@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<h1>GetTogether</h1>
+<br>
+<br>
+<h1 class="center-align">GetTogether</h1>
 <hr>
-<p>We are on a mission to bring individuals closer to their community by enabling community members to easily coordinate free and low cost events for all ages. <a href="{% url 'login' %}">Log in</a> or <a href="{% url 'signup' %}">sign up</a> to get started.</p>
-<h5>Let's get together!</h5>
+<p class="center-align">We are on a mission to bring individuals closer to their community by enabling community members to easily coordinate free and low cost events for all ages. <a href="{% url 'login' %}">Log in</a> or <a href="{% url 'signup' %}">sign up</a> to get started.</p>
+<br>
+<br>
+<br>
 <br>
 <div class="carousel carousel-slider">
     <img src="https://i.imgur.com/yuOniwi.png" alt="community members cleaning the park" class="carousel-item">
@@ -17,6 +20,7 @@
     <img src="https://i.imgur.com/HR3o6BJ.png" alt="community members gardening" class="carousel-item">
 </div>
 <br>
+<h5 class="center-align">Let's get together!</h5>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

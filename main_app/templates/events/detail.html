@@ -9,6 +9,9 @@
       <div class="card-content">
         <span class="card-title">{{ event.title }}</span>
         {% if event.date < today %}
+        <br>
+        <hr>
+        <p>Rate this event</p>
         <form id="star-btn" action=" {% url 'add_rating' event.id %}" method="POST">
           {% csrf_token %}
           <button class="star-btn" type="submit" name="rating" value="5">&#9733;</button>
@@ -17,6 +20,9 @@
           <button class="star-btn" type="submit" name="rating" value="2">&#9733;</button>
           <button class="star-btn" type="submit" name="rating" value="1">&#9733;</button>
         </form>
+        <p>Average Rating: {{ event.average_rating }}/5</p>
+        <br>
+        <hr>
         {% else %}
         <br>
         {% endif %}
