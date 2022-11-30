@@ -37,7 +37,6 @@ def rate(request, event_id):
     Rating.objects.filter(event=event_id, user=request.user).delete()
     r = Rating(user=request.user, rating=request.POST['rating'], event=event)
     r.save()
-    print(request.POST['rating'])
     return redirect('detail', event_id = event_id)
 
 def events_detail(request, event_id):

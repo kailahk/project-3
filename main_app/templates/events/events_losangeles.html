@@ -54,7 +54,48 @@
       <p>City: {{ event.city }}</p>
     </div>
   </div>
-    <div class="col s6">
+  <div class="col s6" id="star-field">
+    <div>
+      <br>
+      <p>Average Rating</p>
+      {% if event.average_rating == 1 %}
+      <span class="yes-star">&#9733;</span>
+      <span class="no-star">&#9733;</span>
+      <span class="no-star">&#9733;</span>
+      <span class="no-star">&#9733;</span>
+      <span class="no-star">&#9733;</span>
+      {% endif %}
+      {% if event.average_rating == 2 %}
+      <span class="yes-star">&#9733;</span>
+      <span class="yes-star">&#9733;</span>
+      <span class="no-star">&#9733;</span>
+      <span class="no-star">&#9733;</span>
+      <span class="no-star">&#9733;</span>
+      {% endif %}
+      {% if event.average_rating == 3 %}
+      <span class="yes-star">&#9733;</span>
+      <span class="yes-star">&#9733;</span>
+      <span class="yes-star">&#9733;</span>
+      <span class="no-star">&#9733;</span>
+      <span class="no-star">&#9733;</span>
+      {% endif %}
+      {% if event.average_rating == 4 %}
+      <span class="yes-star">&#9733;</span>
+      <span class="yes-star">&#9733;</span>
+      <span class="yes-star">&#9733;</span>
+      <span class="yes-star">&#9733;</span>
+      <span class="no-star">&#9733;</span>
+      {% endif %}
+      {% if event.average_rating == 5 %}
+      <span class="yes-star">&#9733;</span>
+      <span class="yes-star">&#9733;</span>
+      <span class="yes-star">&#9733;</span>
+      <span class="yes-star">&#9733;</span>
+      <span class="yes-star">&#9733;</span>
+      {% endif %}
+    </div>
+  </div>
+  <div class="col s6">
       <div>
         {% for photo in event.photo_set.all %}
         {% if forloop.counter == 1 %} 

@@ -56,17 +56,45 @@
         <p>City: {{ event.city }}</p>
       </div>
     </div>
-    <div class="col s6">
+    <div class="col s6" id="star-field">
       <div>
-        <form id="star-btn" action="" method="POST">
-          {% csrf_token %}
-          <input type="hidden" name="rating[event_id]" value="3">
-          <button class="star-btn" type="submit" name="rating[rating]" value="5">&#9733;</button>
-          <button class="star-btn" type="submit" name="rating[rating]" value="4">&#9733;</button>
-          <button class="star-btn" type="submit" name="rating[rating]" value="3">&#9733;</button>
-          <button class="star-btn" type="submit" name="rating[rating]" value="2">&#9733;</button>
-          <button class="star-btn" type="submit" name="rating[rating]" value="1">&#9733;</button>
-        </form>
+        <br>
+        <p>Average Rating</p>
+        {% if event.average_rating == 1 %}
+        <span class="yes-star">&#9733;</span>
+        <span class="no-star">&#9733;</span>
+        <span class="no-star">&#9733;</span>
+        <span class="no-star">&#9733;</span>
+        <span class="no-star">&#9733;</span>
+        {% endif %}
+        {% if event.average_rating == 2 %}
+        <span class="yes-star">&#9733;</span>
+        <span class="yes-star">&#9733;</span>
+        <span class="no-star">&#9733;</span>
+        <span class="no-star">&#9733;</span>
+        <span class="no-star">&#9733;</span>
+        {% endif %}
+        {% if event.average_rating == 3 %}
+        <span class="yes-star">&#9733;</span>
+        <span class="yes-star">&#9733;</span>
+        <span class="yes-star">&#9733;</span>
+        <span class="no-star">&#9733;</span>
+        <span class="no-star">&#9733;</span>
+        {% endif %}
+        {% if event.average_rating == 4 %}
+        <span class="yes-star">&#9733;</span>
+        <span class="yes-star">&#9733;</span>
+        <span class="yes-star">&#9733;</span>
+        <span class="yes-star">&#9733;</span>
+        <span class="no-star">&#9733;</span>
+        {% endif %}
+        {% if event.average_rating == 5 %}
+        <span class="yes-star">&#9733;</span>
+        <span class="yes-star">&#9733;</span>
+        <span class="yes-star">&#9733;</span>
+        <span class="yes-star">&#9733;</span>
+        <span class="yes-star">&#9733;</span>
+        {% endif %}
       </div>
       <div>
         {% for photo in event.photo_set.all %}
