@@ -123,3 +123,11 @@ footer.page-footer {
 .yes-star {
   color: #faa;
 }
+
+#star-field {
+  background-color: #bcdcc13e;
+  display: inline-block;
+  margin: 0;
+  padding: 0 .3em 0 .3em;
+  border-radius: 15px;
+}
