@@ -119,3 +119,7 @@ footer.page-footer {
   justify-content: flex-end;
   padding-left: 0;
 }
+
+.yes-star {
+  color: #faa;
+}
