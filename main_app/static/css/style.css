@@ -131,3 +131,7 @@ footer.page-footer {
   padding: 0 .3em 0 .3em;
   border-radius: 15px;
 }
+
+ul.logo {
+  margin: 0.3vmin 0vmin 0.3vmin 30vmin;
+}
