@@ -21,17 +21,19 @@ def home(request):
 def about(request):
   return render(request, 'about.html')
 
+@login_required
 def events_index(request):
   events = Event.objects.all()
   today = date.today
   for event in events:
     rating = Rating.objects.filter(event=event, user=request.user).first()
-    event.user_rating = rating.rating if rating else 0    
+    event.user_rating = rating.rating if rating else 0
   return render(request, 'events/index.html', {
     'events': events,
     'today': today
   })
 
+@login_required
 def rate(request, event_id):
     event = Event.objects.get(id=event_id)
     Rating.objects.filter(event=event_id, user=request.user).delete()
@@ -39,6 +41,7 @@ def rate(request, event_id):
     r.save()
     return redirect('detail', event_id = event_id)
 
+@login_required
 def events_detail(request, event_id):
   event = Event.objects.get(id=event_id)
   today = date.today 

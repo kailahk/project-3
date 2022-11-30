@@ -105,18 +105,5 @@
   </div>
   {% endif %}
   {% endfor %}
-  <!-- <script>
-    const rate = (rating, event_id) => {
-        fetch(`/rate/${event_id}/${rating}/`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(rest => {
-            window.location.reload();
-            // you may want to update the rating here
-            // to simplify stuff, I just reload the page
-        })
-    }
-  </script> -->
+
   {% endblock %}

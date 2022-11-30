@@ -1,5 +1,8 @@
 from django.urls import path
 from . import views
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
+from django.conf import settings
 
 urlpatterns = [
   path('', views.home, name='home'),
@@ -19,4 +22,5 @@ urlpatterns = [
   path('events/events_losangeles/', views.events_losangeles, name='events_losangeles'),
   path('events/events_sanfrancisco/', views.events_sanfrancisco, name='events_sanfrancisco'),
   path('rate/<int:event_id>/', views.rate, name='add_rating'),
+  path("favicon.ico", RedirectView.as_view(url=staticfiles_storage.url("favicon.ico"))),
 ] 
