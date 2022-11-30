@@ -25,6 +25,9 @@
                 <ul>
                     <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;GetTogether</a></li>
                 </ul>
+                <ul class="left logo">
+                    <li><img src="https://i.imgur.com/8ejsXGY.png" alt="get-together-logo" height="60vmin"></li>
+                </ul>
                 <ul class="right">
                     <li><a href="{% url 'about' %}">About</a></li>
                     {% if user.is_authenticated %}
@@ -50,9 +53,6 @@
                     <li>Welcome,&nbsp;{{ user.username|capfirst }}!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
                 </ul>
                 {% endif %}
-                <ul class="left logo">
-                    <img src="https://i.imgur.com/8ejsXGY.png" alt="get-together-logo" height="60vmin">
-                </ul>
             </div>
         </nav>
     </header>
