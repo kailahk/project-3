@@ -1,6 +1,6 @@
 # GetTogether
 
-GetTogether is an app we desigend to bring individuals closer to their community by making it easy to organize local and affordable events for all ages. Let’s GetTogether!
+GetTogether is a Full-stack, full CRUD web application that we (a team of three webb developers) desigend to bring individuals closer to their community by making it easy to organize local and affordable events for all ages. We created GetTogether using the concept of 'mob programming,' Django, Python, HTML, CSS, and DTL, and Heroku for deployment. The app allows visitors to sign up or login, view events in three different cities, create events in any of those cities, comment on past and upcoming events, and rate past events. Our team's mission was to create a community-centric app that makes finding events and putting on events simple and fun. Let’s GetTogether!
 
 # Images:
 
@@ -54,8 +54,7 @@ our [pitch deck on Canva!](https://www.canva.com/design/DAFSQBJCN4s/40NIs9nR7Egd
 
 # Getting Started
 
-[GetTogether](https://gettogether.herokuapp.com/events/)
-* A collaborative (team of 3 developers), Full-stack CRUD (create, read, update, delete) web application created using 'mob programming,' Django, Python, HTML, CSS, and DTL, and deployed on Heroku. The app allows visitors to sign up or login, view events in three different cities, create events in any of those cities, comment on past and upcoming events, and rate past events. Our team's mission was to create a community-centric app that makes finding events and putting on events simple and fun.
+Click this link to check out our app! --> [GetTogether](https://gettogether.herokuapp.com/events/)
 
 # Next Steps
 
